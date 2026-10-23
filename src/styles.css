@@ -26,5 +26,4 @@ button:hover { background: #05655e; }
 .total { margin-top: 10px; padding-top: 17px; border-top: 1px solid #ccdedb; font-size: 1.1rem; }
 .total strong { color: #087f77; }
 .footnote { color: #74858f; font-size: .75rem; text-align: center; line-height: 1.5; margin: 22px 0 0; }
-[hidden] { display: none !important; }
 @media (max-width: 480px) { .page { padding: 14px; align-items: start; } .card { padding: 24px 20px; border-radius: 16px; } }
