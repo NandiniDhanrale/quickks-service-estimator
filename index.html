@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Quickks home service price estimator" />
+  <title>Quickks | Service Price Estimator</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="pricing.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <section class="card" aria-labelledby="page-title">
+      <header class="header">
+        <span class="eyebrow">QUICKKS · HOME SERVICES</span>
+        <h1 id="page-title">Service Price Estimator</h1>
+        <p>Choose a service and see an instant cost estimate.</p>
+      </header>
+      <form id="estimate-form" novalidate>
+        <div class="field">
+          <label for="service">Service type</label>
+          <select id="service" name="service" required>
+            <option value="electrician">Electrician — ₹300/hr</option>
+            <option value="plumber">Plumber — ₹250/hr</option>
+            <option value="carpenter">Carpenter — ₹350/hr</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="hours">Working hours</label>
+          <input id="hours" name="hours" type="number" min="1" step="1" value="1" required aria-describedby="hours-help hours-error" />
+          <small id="hours-help">Minimum 1 hour; whole hours only.</small>
+          <p id="hours-error" class="error" role="alert" hidden></p>
+        </div>
+        <label class="check-row" for="emergency">
+          <input id="emergency" name="emergency" type="checkbox" />
+          <span><strong>Emergency booking</strong><small>One-time additional fee of ₹100</small></span>
+        </label>
+        <button type="submit">Calculate Estimate</button>
+      </form>
+      <section id="result" class="result" aria-live="polite" aria-label="Estimated price" hidden>
+        <h2>Your estimate</h2>
+        <div class="line"><span>Service</span><strong id="result-service"></strong></div>
+        <div class="line"><span>Rate × hours</span><strong id="result-base"></strong></div>
+        <div class="line"><span>Emergency fee</span><strong id="result-fee"></strong></div>
+        <div class="line total"><span>Estimated total</span><strong id="result-total"></strong></div>
+      </section>
+      <p class="footnote">Price estimate only. Actual availability and bookings are not included.</p>
+    </section>
+  </main>
+</body>
+</html>

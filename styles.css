@@ -1,0 +1,30 @@
+:root { font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #172b38; background: #edf5f5; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.page { min-height: 100vh; display: grid; place-items: center; padding: 24px; }
+.card { width: 100%; max-width: 520px; background: #fff; border-radius: 22px; padding: clamp(24px, 5vw, 40px); box-shadow: 0 18px 55px #163a3c17; }
+.eyebrow { color: #087f77; font-size: .75rem; letter-spacing: .13em; font-weight: 800; }
+h1 { margin: 12px 0 8px; font-size: clamp(1.6rem, 5vw, 2rem); letter-spacing: -.035em; }
+.header p { margin: 0 0 28px; color: #647682; line-height: 1.5; }
+.field { display: flex; flex-direction: column; gap: 9px; margin-bottom: 22px; }
+.field label { font-weight: 650; }
+select, input[type=number] { width: 100%; padding: 13px 14px; font: inherit; color: inherit; background: #fff; border: 1px solid #cbd8dd; border-radius: 10px; }
+select:focus, input:focus, button:focus-visible { outline: 3px solid #9cddd7; outline-offset: 2px; }
+.field small, .check-row small { color: #667985; font-size: .8rem; }
+.error { color: #b42318; margin: 0; font-size: .875rem; }
+input[aria-invalid=true] { border-color: #b42318; }
+.check-row { display: flex; align-items: flex-start; gap: 12px; background: #f1f8f7; border: 1px solid #d7eae7; padding: 15px; border-radius: 12px; margin-bottom: 24px; cursor: pointer; }
+.check-row input { width: 18px; height: 18px; accent-color: #087f77; margin: 2px 0 0; }
+.check-row span { display: grid; gap: 4px; }
+button { display: block; width: 100%; border: 0; border-radius: 10px; padding: 15px; background: #087f77; color: white; font: inherit; font-weight: 750; cursor: pointer; }
+button:hover { background: #05655e; }
+.result { margin-top: 25px; padding: 20px; background: #f2f8f7; border-radius: 14px; }
+.result h2 { margin: 0 0 15px; font-size: 1.1rem; }
+.line { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; font-size: .93rem; }
+.line span { color: #526672; }
+.line strong { text-align: right; }
+.total { margin-top: 10px; padding-top: 17px; border-top: 1px solid #ccdedb; font-size: 1.1rem; }
+.total strong { color: #087f77; }
+.footnote { color: #74858f; font-size: .75rem; text-align: center; line-height: 1.5; margin: 22px 0 0; }
+[hidden] { display: none !important; }
+@media (max-width: 480px) { .page { padding: 14px; align-items: start; } .card { padding: 24px 20px; border-radius: 16px; } }
