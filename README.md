@@ -69,8 +69,6 @@ In repository **Settings → Pages → Build and deployment**, select **GitHub A
 
 https://nandinidhanrale.github.io/quickks-service-estimator/
 
-Leave **Custom domain** empty. Do not use the personal portfolio domain.
-
 ## Scope note
 
 The task title says availability, but no availability logic or schedules were provided. This implementation is a service **price estimator**, not a real reservation or availability system.
