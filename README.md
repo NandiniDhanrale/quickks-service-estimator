@@ -2,6 +2,28 @@
 
 A React + Vite app for the Quickks React Intern onboarding assignment.
 
+## Tech Stack
+
+![React](https://img.shields.io/badge/React-19-149ECA?logo=react&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES_Modules-F7DF1E?logo=javascript&logoColor=black)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-Test_Runner-339933?logo=nodedotjs&logoColor=white)
+![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub_Pages-222222?logo=github&logoColor=white)
+
+| Layer | Technology | Purpose |
+| --- | --- | --- |
+| UI framework | **React 19** | JSX components, props, and `useState` |
+| Build tooling | **Vite 7** | Development server and optimized production bundle |
+| Application logic | **JavaScript (ES modules)** | Pricing and input validation |
+| Styling | **CSS3** | Responsive layout |
+| Page shell | **HTML5** | App entry point |
+| Testing | **Node.js built-in test runner** | Pricing unit tests |
+| Hosting | **GitHub Pages + GitHub Actions** | Automated static deployment |
+
+> **About GitHub's Languages chart:** React is a JavaScript library, not a separate programming language. GitHub counts most `.jsx` files as JavaScript, so seeing JavaScript, HTML and CSS in the Languages section is expected even for this React app.
+
 ## Requirements
 
 - Electrician ₹300/hr, Plumber ₹250/hr, Carpenter ₹350/hr
