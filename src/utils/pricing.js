@@ -1,16 +1,20 @@
-/** Independent business rules; React components do not own the pricing logic. */
-export const SERVICE_RATES = Object.freeze({
-  electrician: 300,
-  plumber: 250,
-  carpenter: 350,
+/** One source of truth for service labels and rates. */
+export const SERVICES = Object.freeze({
+  electrician: Object.freeze({ label: 'Electrician', rate: 300 }),
+  plumber: Object.freeze({ label: 'Plumber', rate: 250 }),
+  carpenter: Object.freeze({ label: 'Carpenter', rate: 350 }),
 });
+export const SERVICE_RATES = Object.freeze(Object.fromEntries(
+  Object.entries(SERVICES).map(([key, { rate }]) => [key, rate])
+));
+export const MIN_HOURS = 1;
+export const MAX_HOURS = 24;
 export const EMERGENCY_FEE = 100;
 
 export function calculateEstimate(service, hours, emergency = false) {
-  if (typeof service !== 'string' || !Object.hasOwn(SERVICE_RATES, service)) {
+  if (typeof service !== 'string' || !Object.hasOwn(SERVICES, service)) {
     throw new Error('Please select a valid service.');
   }
-  // Reject empty before Number('') converts it to zero.
   if (typeof hours === 'string' && hours.trim() === '') {
     throw new Error('Please enter working hours (minimum 1).');
   }
@@ -18,20 +22,20 @@ export function calculateEstimate(service, hours, emergency = false) {
     throw new Error('Please enter valid working hours.');
   }
   const parsedHours = Number(hours);
-  if (!Number.isSafeInteger(parsedHours) || parsedHours < 1) {
+  if (!Number.isSafeInteger(parsedHours) || parsedHours < MIN_HOURS) {
     throw new Error('Working hours must be a whole number of at least 1.');
+  }
+  if (parsedHours > MAX_HOURS) {
+    throw new Error(`Working hours cannot exceed ${MAX_HOURS}.`);
   }
   if (typeof emergency !== 'boolean') {
     throw new Error('Emergency booking must be true or false.');
   }
-  const rate = SERVICE_RATES[service];
+  const { label, rate } = SERVICES[service];
   const basePrice = rate * parsedHours;
   const emergencyFee = emergency ? EMERGENCY_FEE : 0;
   const totalPrice = basePrice + emergencyFee;
-  if (!Number.isSafeInteger(totalPrice)) {
-    throw new Error('Working hours are too large.');
-  }
-  return { service, hours: parsedHours, rate, basePrice, emergencyFee, totalPrice };
+  return { service, serviceLabel: label, hours: parsedHours, rate, basePrice, emergencyFee, totalPrice };
 }
 export function formatRupees(amount) {
   return '₹' + amount.toLocaleString('en-IN');

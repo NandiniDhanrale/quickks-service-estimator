@@ -27,10 +27,12 @@ A React + Vite app for the Quickks React Intern onboarding assignment.
 ## Requirements
 
 - Electrician ₹300/hr, Plumber ₹250/hr, Carpenter ₹350/hr
-- Minimum 1 hour; this implementation assumes whole-number hours
+- Minimum 1 hour and maximum **24 hours** (documented assumption; whole hours only)
 - Emergency booking adds a one-time ₹100 fee
 - Clear validation messages for zero, negative, empty, fractional and invalid hours
-- Responsive, accessible form with an estimated price breakdown
+- Detailed price breakdown: service, hourly rate, working hours, subtotal, emergency fee, and total
+- Service names and rates are kept in one `SERVICES` catalog
+- Responsive, accessible form
 
 ## Run locally
 
@@ -63,7 +65,7 @@ npm run build
 
 ## Deploy to GitHub Pages
 
-The Vite base path is `/quickks-service-estimator/`. The workflow `.github/workflows/deploy.yml` runs tests, builds and publishes `dist/` on pushes to `feature/estimator-nandini`.
+The Vite base path is `/quickks-service-estimator/`. The workflow `.github/workflows/deploy.yml` runs tests, builds and publishes `dist/` on pushes to `main`.
 
 In repository **Settings → Pages → Build and deployment**, select **GitHub Actions** rather than **Deploy from a branch**. The expected URL is:
 
